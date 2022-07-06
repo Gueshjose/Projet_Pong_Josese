@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+*{
+    padding: 0;
+    margin:0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Style div conteneur  pong */
+#pong{
+    background-color: black;
+    height: 100vh;
+}
+
+/* Style pour la div du score */
+#score{
+    color: white ;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 20vh;
+    width: 15%;
+    margin: auto;
+    font-size: 2vw;
+    background-color: rgba(0,0,0,1);
+}
+
+/* Style général pour le joueur et l'ordi */
+#joueur, #ordi{
+    height: 28vh;
+    width: 1.8vw;
+    background-color: white;
+    position:absolute;
+    top: 40%;
+}
+
+/* Placement horizontal pour le joueur */
+#joueur{
+    left: 1%;
+}
+
+/* Placement horizontal pour l'ordinateur */
+#ordi{
+
+    right:1%
+}
+
+/* Style pour la balle */
+#balle{
+    width:1.6%;
+    padding: 0.8% 0;
+    border-radius: 50%;
+    background-color: white;
+}
