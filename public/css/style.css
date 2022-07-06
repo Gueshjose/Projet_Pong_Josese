@@ -5,10 +5,16 @@
     font-family: 'Press Start 2P', cursive;
 }
 
+/*  */
+body{
+    overflow-y: hidden;
+}
 /* Style div conteneur  pong */
 #pong{
     background-color: black;
     height: 100vh;
+    position:relative;
+    overflow:clip;
 }
 
 /* Style pour la div du score */
@@ -36,6 +42,7 @@
 /* Placement horizontal pour le joueur */
 #joueur{
     left: 1%;
+    box-shadow: 1px 1px 1px red;
 }
 
 /* Placement horizontal pour l'ordinateur */
@@ -46,8 +53,11 @@
 
 /* Style pour la balle */
 #balle{
+    position:absolute;
     width:1.6%;
     padding: 0.8% 0;
     border-radius: 50%;
     background-color: white;
+    top:49%;
+    left: 49%;
 }
