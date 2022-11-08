@@ -37,6 +37,7 @@ let largeurMax = (pong.getBoundingClientRect().right);
 
 //Données de la balle 
 balle.style.top = (Math.random() * (hauteurMax / 4) + hauteurMax / 3) + 'px';
+let previousBall = (Math.random() * (hauteurMax / 4) + hauteurMax / 3) + 'px';
 balle.style.left = (Math.random() * (largeurMax / 4) + largeurMax / 3) + 'px';
 let speedBallY = 2;
 let speedBallX = 2;
@@ -77,8 +78,14 @@ play.addEventListener('click', function () {
 ordi.style.top = balle.style.top;
 
 function moveOrdi() {
-    ordi.style.top = Number(balle.style.top.slice(0, -2) - speedBallY) - 0.95 + 'px';
+    console.log(Math.random()*(Number(balle.style.top.slice(0, -2) - speedBallY)-10)+((Number(balle.style.top.slice(0, -2) - speedBallY)+10)))
+    
 
+
+    if ( !( (ordi.style.top.slice(0, -2) <= 0 && balle.style.top.slice(0, -2) < previousBall)   ^ (ordi.style.top.slice(0, -2) >= hauteurMax - ordi.getBoundingClientRect().height && balle.style.top.slice(0, -2) > previousBall))) {
+        ordi.style.top = (Math.random()*(3-(-3)+1)+(-3))+Number(balle.style.top.slice(0, -2) )+ 3.5 + 'px';
+        previousBall = Number(balle.style.top.slice(0, -2)); 
+    }
 }
 
 /**
@@ -91,9 +98,9 @@ function colission(j, b) {
 
         return false;
     } else {
-        speedBallX *= -1.2;
+        speedBallX *= -1.1;
         if ((b.y > (j.y + (j.height / 2)))) {
-            speedBallY *= -1.1;
+            speedBallY *= -+1.1;
         } else {
             speedBallY *= 1.1;
         }
