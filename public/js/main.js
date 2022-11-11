@@ -98,11 +98,11 @@ function colission(j, b) {
 
         return false;
     } else {
-        speedBallX *= -1.1;
+        speedBallX *= -1.15;
         if ((b.y > (j.y + (j.height / 2)))) {
-            speedBallY *= -+1.1;
+            speedBallY *= -1.15;
         } else {
-            speedBallY *= 1.1;
+            speedBallY *= 1.15;
         }
         return true
     }
